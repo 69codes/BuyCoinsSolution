@@ -1,0 +1,32 @@
+                    Recursion in Fibonnacci
+
+Recursion is a concept of programming where a function calls itself one
+or more times within its block. The function is very likely to run into 
+problems of speed as a result of the function calling itself, it is 
+inefficient for solving problems with a large input as it is time consuming, 
+and without careful implementation (use of base case), the program will crash.
+
+Fibonnacci series is such that a number is the addition of its previous 
+numbers. It is widely used to explain recursion in programming.
+
+# writing the recursive fibonacci sequence with pyhton
+def fib(n):
+    if n <= 1:  # without this base case, we run into a recursive loop, analogous to an infinite loop
+        return n
+    else:
+    return fib( n – 1 ) + fib( n – 2 )
+print( fib(5) ) # results in 5
+
+The above is an example of using recursion to solve fibonacci series,
+for fib(5), n is not less than 1, so the function executes fib(4) + fib (3), 
+where both fib(4) and fib(3) are also functions waiting to be executed.
+Meaning the function calls itself  15 times before finaling 
+calculating its answer. fib(1) must be calculated five times. This is because 
+of the two-part recursive call.
+This method is grossly inefficient for largefigures.
+
+if we call fib(50), it will never stop executing, as the call tree grows 
+exponentially.
+
+The big O notation of fib(n) is (1/sqrt(5)) * 1.618**(n + 1) 
+meaning it takes exponential time to execute. 1.618 is golden ratio.
